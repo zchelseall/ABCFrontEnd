@@ -15,26 +15,20 @@ using System.Windows.Shapes;
 namespace ABCSolutionsWPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FormPrivateKey.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FormPrivateKey : Window
     {
-        public MainWindow()
+        public FormPrivateKey(string ID, string key)
         {
             InitializeComponent();
+            init(ID, key);
         }
 
-        private void btSubmit_Click(object sender, RoutedEventArgs e)
+        private void init(string ID, string key)
         {
-            FormSubmit formSubmit = new FormSubmit();
-            formSubmit.Show();
-
-        }
-
-        private void btLookUp_Click(object sender, RoutedEventArgs e)
-        {
-            FormLookUp formLookup = new FormLookUp();
-            formLookup.Show();
+            this.tbID.Text = ID;
+            this.tbKey.Text = key;
         }
     }
 }

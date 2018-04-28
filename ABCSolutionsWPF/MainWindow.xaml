@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ABCSolutionsWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="学表链" Height="223.333" Width="254.667" Background="#FF2BA0C0">
+    <Grid Background="#FF242424">
+        <Button Name="btSubmit" Content="提交成绩" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="194" Background="#FFFFFFAA" Click="btSubmit_Click"/>
+        <Button Name="btLookUp" Content="查询成绩" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="194" Background="#FFFFFFAA" Margin="120,0,0,0" Click="btLookUp_Click"/>
     </Grid>
 </Window>
