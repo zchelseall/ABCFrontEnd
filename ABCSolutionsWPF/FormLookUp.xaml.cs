@@ -36,8 +36,9 @@ namespace ABCSolutionsWPF
         
         private void init()
         {
+            /*
             grades = new List<Grades>();
-            dgGrades.ItemsSource = grades;
+            dgGrades.ItemsSource = grades;*/
 
             dictSchools = new Dictionary<string, string>
             {
@@ -109,6 +110,33 @@ namespace ABCSolutionsWPF
 
             string response = this.client.queryTranscript("", ID);
             byte[] text = Crypto.Decode(response, key);
+
+            var cred = JsonConvert.DeserializeObject<Credentials>(Encoding.UTF8.GetString(text));
+            this.DataContext = cred;
+            this.cbSchools.SelectedValue = cred.School;
+
+            /*
+            this.tbName.Text = cred.Name;
+            this.cbSchools.SelectedValue = cred.School;
+            cred.School = this.cbSchools.SelectedValue as string;
+            cred.StudID = this.tbStudID.Text;
+            cred.Term = this.tbTerm.Text;
+            cred.transcript = grades;
+            */
+
+            /*
+            string serialized = JsonConvert.SerializeObject(cred);
+            var ciphertext = Crypto.Encode(Encoding.UTF8.GetBytes(serialized), out key);
+            string guid = Guid.NewGuid().ToString("n");
+            FormPrivateKey formPrivateKey = new FormPrivateKey(guid, key);
+            formPrivateKey.Show();
+            var msg = this.client.sendTranscript(cred.School, guid, ciphertext);
+            MessageBox.Show(msg);*/
+
+
+            grades = cred.transcript as List<Grades>;
+            dgGrades.ItemsSource = grades;
+
 
         }
     }

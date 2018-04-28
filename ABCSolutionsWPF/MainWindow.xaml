@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="学表链" Height="223.333" Width="254.667" Background="#FF2BA0C0">
     <Grid Background="#FF242424">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="27*"/>
+        </Grid.ColumnDefinitions>
         <Button Name="btSubmit" Content="提交成绩" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="194" Background="#FFFFFFAA" Click="btSubmit_Click"/>
-        <Button Name="btLookUp" Content="查询成绩" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="194" Background="#FFFFFFAA" Margin="120,0,0,0" Click="btLookUp_Click"/>
+        <Button Name="btLookUp" Content="查询成绩" HorizontalAlignment="Left" VerticalAlignment="Top" Width="128" Height="194" Background="#FFFFFFAA" Margin="120,0,0,0" Click="btLookUp_Click" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

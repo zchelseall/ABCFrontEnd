@@ -8,12 +8,12 @@
         Title="学表链" Height="345.333" Width="425" Icon="C:\Users\zchel\OneDrive\DoraHacks20180428\ABCSolutionsWPF\images\ABCSolutions.ico">
     <Grid>
         <Label Content="姓名" HorizontalAlignment="Left" Margin="24,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.411,0.273"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="63,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TabIndex="1" Name="tbName"/>
+        <TextBox Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="63,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TabIndex="1" Name="tbName"/>
         <Label Content="学号" HorizontalAlignment="Left" Margin="25,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.411,0.273"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="63,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TabIndex="3" Name="tbStudID"/>
+        <TextBox Text="{Binding StudID}" HorizontalAlignment="Left" Height="23" Margin="63,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TabIndex="3" Name="tbStudID"/>
         <Label Content="学校" HorizontalAlignment="Left" Margin="213,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.411,0.273"/>
         <Label Content="学期" HorizontalAlignment="Left" Margin="214,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.411,0.273"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="251,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TabIndex="4" Name="tbTerm"/>
+        <TextBox Text="{Binding Term}" HorizontalAlignment="Left" Height="23" Margin="251,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TabIndex="4" Name="tbTerm"/>
         <DataGrid Name="dgGrades" AutoGenerateColumns="False" Margin="25,102,27.667,63" IsTabStop="True" TabIndex="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="课程号" Binding="{Binding CourseID}" Width="0.25*"/>
@@ -23,7 +23,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="确认并提交" HorizontalAlignment="Left" Margin="171,275,0,0" VerticalAlignment="Top" Width="75" TabIndex="6" Click="Button_Click"/>
-        <ComboBox Name ="cbSchools" HorizontalAlignment="Left" Margin="251,26,0,0" VerticalAlignment="Top" Width="140" SelectedValuePath="Value" DisplayMemberPath="Key"/>
+        <ComboBox Name ="cbSchools" SelectedValue="{Binding School}" HorizontalAlignment="Left" Margin="251,26,0,0" VerticalAlignment="Top" Width="140" SelectedValuePath="Value" DisplayMemberPath="Key"/>
 
     </Grid>
 </Window>
